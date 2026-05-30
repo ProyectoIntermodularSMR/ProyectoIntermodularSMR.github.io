@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio: Phishing</title>
+    <style>
+        /* Estilos a juego con tu paleta de colores Cyberpunk */
+        :root {
+            --bg-dark: #0a0b0d;
+            --card-bg: #12141c;
+            --accent-purple: #8a2be2;
+            --accent-cyan: #00ffcc;
+            --text-main: #ffffff;
+            --text-dim: #8c92ac;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-back {
+            display: inline-block;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            text-shadow: 0 0 10px var(--accent-cyan);
+            transform: translateX(-5px);
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--text-main), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 255, 204, 0.1);
+            color: var(--accent-cyan);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: var(--accent-purple);
+            margin-top: 30px;
+            border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+            padding-bottom: 8px;
+        }
+
+        p {
+            color: var(--text-dim);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            color: var(--text-dim);
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="../index.html#sandbox" class="btn-back">← Volver al Sandbox</a>
+        
+        <h1>Phishing</h1>
+        <div class="badge">Ingeniería Social</div>
+        
+        <h2>¿En qué consiste este ataque?</h2>
+        <p>El phishing es una técnica de ingeniería social utilizada por los ciberdelincuentes para obtener información confidencial de los usuarios de forma fraudulenta (como contraseñas, números de tarjetas de crédito o datos bancarios). El atacante se comunica simulando ser una entidad legítima (un banco, una red social o una empresa pública) para ganarse la confianza de la víctima.</p>
+        
+        <h2>¿Cómo actúa la amenaza?</h2>
+        <ul>
+            <li><strong>El Gancho:</strong> Se recibe un correo electrónico, SMS o mensaje con un tono de urgencia o una alerta importante.</li>
+            <li><strong>La Redirección:</strong> El mensaje incluye un enlace que redirige a una página web falsa clonada meticulosamente de la original.</li>
+            <li><strong>La Captura:</strong> Cuando la víctima introduce sus credenciales pensando que está en el sitio seguro, los datos viajan directamente al servidor del atacante.</li>
+        </ul>
+
+        <h2>Medidas de Mitigación y Defensa</h2>
+        <p>Para protegerse de este tipo de fraudes, es indispensable desconfiar de mensajes con tono alarmista, revisar minuciosamente que el dominio de la URL del sitio web sea el oficial y activar el doble factor de autenticación (2FA) en todas las cuentas de usuario.</p>
+    </div>
+
+</body>
+</html>
