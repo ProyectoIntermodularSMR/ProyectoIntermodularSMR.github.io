@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandbox: Ransomware de Doble Extorsión</title>
+    <style>
+        :root {
+            --bg-dark: #0a0b0d;
+            --card-bg: #12141c;
+            --accent-purple: #8a2be2;
+            --accent-cyan: #00ffcc;
+            --text-main: #ffffff;
+            --text-dim: #8c92ac;
+            
+            /* Colores corporativos de tus bloques */
+            --box-blue-bg: rgba(27, 54, 93, 0.4);
+            --box-blue-border: #2b5c9c;
+            --box-yellow-bg: rgba(74, 62, 28, 0.4);
+            --box-yellow-border: #8c7333;
+            --box-red-bg: rgba(74, 34, 34, 0.4);
+            --box-red-border: #9c3a3a;
+            --box-green-bg: rgba(28, 69, 35, 0.4);
+            --box-green-border: #338c43;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-back {
+            display: inline-block;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            text-shadow: 0 0 10px var(--accent-cyan);
+            transform: translateX(-5px);
+        }
+
+        .header-attack {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .attack-icon {
+            font-size: 32px;
+            background: rgba(138, 43, 226, 0.2);
+            padding: 10px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(90deg, var(--text-main), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.08);
+            color: #bfa3ff;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Configuración de la rejilla */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-box {
+            border-radius: 8px;
+            padding: 25px;
+            border: 1px solid transparent;
+        }
+
+        .info-box.full-width {
+            grid-column: span 2;
+        }
+
+        .box-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Clases de color para los paneles */
+        .box-blue {
+            background-color: var(--box-blue-bg);
+            border-color: var(--box-blue-border);
+        }
+        .box-blue .box-title { color: #58a6ff; }
+
+        .box-yellow {
+            background-color: var(--box-yellow-bg);
+            border-color: var(--box-yellow-border);
+        }
+        .box-yellow .box-title { color: #f2cc60; }
+
+        .box-red {
+            background-color: var(--box-red-bg);
+            border-color: var(--box-red-border);
+        }
+        .box-red .box-title { color: #ff7b72; }
+
+        .box-green {
+            background-color: var(--box-green-bg);
+            border-color: var(--box-green-border);
+        }
+        .box-green .box-title { color: #72f1b8; }
+
+        p {
+            color: #e1e4ea;
+            font-size: 15px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            color: #e1e4ea;
+            font-size: 14.5px;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        li:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .info-box.full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="../index.html#sandbox" class="btn-back">← Volver al Sandbox</a>
+        
+        <div class="header-attack">
+            <div class="attack-icon">🔒</div>
+            <h1>Ransomware de Doble Extorsión</h1>
+        </div>
+        <div class="badge">Software Malicioso (Malware)</div>
+        
+        <div class="info-grid">
+            <div class="info-box box-blue full-width">
+                <div class="box-title">ℹ️ Qué es</div>
+                <p>El ransomware de doble extorsión es una evolución avanzada del ransomware tradicional. En este tipo de ataque, el ciberdelincuente no solo cifra los archivos del sistema para impedir el acceso y exigir un rescate, sino que previamente extrae (exfiltra) datos confidenciales de la organización con la amenaza de filtrarlos públicamente si no se realiza el pago.</p>
+            </div>
+            
+            <div class="info-box box-yellow">
+                <div class="box-title">⚙️ Cómo funciona</div>
+                <p>El atacante vulnera la red e inicia una fase de movimiento lateral para localizar información crítica (propiedad intelectual, datos de clientes o financieros). El proceso se ejecuta en dos pasos: primero transfieren silenciosamente gigabytes de datos a servidores externos bajo su control; segundo, activan el ejecutable que cifra masivamente los discos locales de la empresa, rompiendo la utilidad de las copias de seguridad tradicionales.</p>
+            </div>
+            
+            <div class="info-box box-red">
+                <div class="box-title">⚠️ Qué puede hacer</div>
+                <p>Paralización completa de la infraestructura IT, sanciones millonarias por violaciones de normativas de protección de datos (como RGPD), daño reputacional irreparable debido a la publicación de secretos comerciales y filtración masiva de datos en la Dark Web a través de blogs corporativos de extorsión (Data Leaks sites).</p>
+            </div>
+            
+            <div class="info-box box-green">
+                <div class="box-title">🛡️ Cómo prevenirlo</div>
+                <ul>
+                    <li>Implementar una estrategia de copias de seguridad inmutables y aisladas de la red principal (Offline/Air-gapped).</li>
+                    <li>Utilizar herramientas de monitorización DLP (Data Loss Prevention) para detectar transferencias masivas e inusuales de datos al exterior.</li>
+                    <li>Desplegar sistemas EDR/XDR capaces de analizar heurísticamente el comportamiento de procesos de cifrado anómalos.</li>
+                    <li>Aplicar el principio de mínimo privilegio y la segmentación estricta de redes para evitar movimientos laterales del atacante.</li>
+                    <li>Cifrar los datos en reposo y en tránsito para que, en caso de exfiltración, la información sea ilegible para los atacantes.</li>
+                </ul>
+            </div>
+            
+            <div class="info-box box-blue">
+                <div class="box-title">🚨 Qué hacer si te atacan</div>
+                <ul>
+                    <li>Aislar inmediatamente de la red local los equipos e infraestructuras comprometidos para frenar la propagación y la exfiltración activa.</li>
+                    <li>No apagar los sistemas directamente; desconectarlos de la red para preservar evidencias volátiles en la memoria RAM.</li>
+                    <li>Notificar de forma obligatoria el incidente a las autoridades pertinentes y a las agencias de protección de datos en los plazos legales.</li>
+                    <li>Recurrir a los comités de respuesta a incidentes y análisis forense para identificar el punto de entrada y el alcance de los datos robados.</li>
+                    <li>Seguir las directrices de los organismos de ciberseguridad oficiales (como INCIBE), recomendando firmemente no ceder al pago del chantaje.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
