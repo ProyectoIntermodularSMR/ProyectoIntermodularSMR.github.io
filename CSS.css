@@ -502,6 +502,14 @@ body {
     margin: 0 auto;
 }
 
+/* Reglas añadidas para transformar los enlaces en botones limpios */
+.skills-hexagon-grid a.skill-hexagon {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
 .skill-hexagon {
     width: 160px;
     height: 180px;
@@ -531,6 +539,13 @@ body {
     box-shadow: 0 0 30px rgba(0, 255, 204, 0.2);
 }
 
+/* Feedback táctil / Efecto click al pulsar el botón */
+.skill-hexagon:active .hexagon-inner {
+    transform: scale(0.95) rotate(15deg);
+    background: #1e2235;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+}
+
 .hexagon-content {
     position: absolute;
     width: 100%;
@@ -541,7 +556,6 @@ body {
     align-items: center;
     padding: 20px;
     text-align: center;
-    /* Contrarresta la rotación del padre en el hover */
     transition: var(--transition-smooth);
 }
 
@@ -588,10 +602,10 @@ body {
 }
 
 /* =================================================== */
-/* 7. NUEVA SECCIÓN: MÁQUINA VIRTUAL KALI (ESPACIO)    */
+/* 7. SECCIÓN MÁQUINA VIRTUAL KALI (ESPACIO DE VM)     */
 /* =================================================== */
 .vm-workspace-section {
-    padding: 120px 20px; /* Margen amplio que resuelve la superposición visual */
+    padding: 120px 20px;
     background: linear-gradient(to bottom, transparent, #050508);
     display: flex;
     justify-content: center;
@@ -609,7 +623,6 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
-/* Barra superior de la ventana del Sistema Operativo */
 .vm-header {
     background: #1a1c23;
     padding: 12px 20px;
@@ -651,7 +664,6 @@ body {
     animation: pulseStatus 2s infinite;
 }
 
-/* Cuerpo de la pantalla de Laboratorio */
 .vm-body {
     position: relative;
     height: 420px;
@@ -664,7 +676,6 @@ body {
     overflow: hidden;
 }
 
-/* Fondo decorativo (Marca de agua Kali) */
 .kali-logo-watermark {
     text-align: center;
     opacity: 0.12;
@@ -690,7 +701,6 @@ body {
     letter-spacing: 2px;
 }
 
-/* Consola de comandos */
 .vm-terminal-overlay {
     position: absolute;
     top: 25px;
@@ -715,7 +725,6 @@ body {
     animation: cursorBlink 1s infinite;
 }
 
-/* Botón de Lanzamiento de la Máquina */
 .vm-boot-btn {
     position: absolute;
     bottom: 40px;
@@ -803,7 +812,6 @@ body {
     line-height: 1.5;
 }
 
-/* Bloque Informativo del Contenido Lateral */
 .contact-form-info {
     flex: 1;
     background: rgba(30, 35, 48, 0.3);
