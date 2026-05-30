@@ -55,19 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+    // Base de datos para los Hexágonos con las URL de redirección añadidas
     const skillsData = [
-        { name: 'Phishing', icon: '🎣', level: 95, category: 'AAA' },
-        { name: 'Spear Phishing', icon: '📨', level: 90, category: 'AAA' },
-        { name: 'Smishing', icon: '📱', level: 88, category: 'AAA' },
-        { name: 'Ransomware de Doble Extorsión', icon: '🔒', level: 92, category: 'BBB' },
-        { name: 'Fileless Malware', icon: '👻', level: 85, category: 'BBB' },
-        { name: 'Man-in-the-Middle', icon: '🕵️', level: 93, category: 'CCC' },
-        { name: 'Credential Stuffing', icon: '🔑', level: 82, category: 'CCC' },
-        { name: 'Password Spraying', icon: '🔓', level: 87, category: 'CCC' },
-        { name: 'DDoS', icon: '🌐', level: 78, category: 'DDD' },
-        { name: 'Inyección SQL', icon: '🗄️', level: 75, category: 'GGG' },
-        { name: 'Compromiso de Proveedores', icon: '🔓', level: 85, category: 'EEE' },
-        { name: 'Ataques a IoT', icon: '📡', level: 90, category: 'FFF' }
+        { name: 'Phishing', icon: '🎣', level: 95, category: 'AAA', url: 'paginas/phishing.html' },
+        { name: 'Spear Phishing', icon: '📨', level: 90, category: 'AAA', url: 'paginas/spear-phishing.html' },
+        { name: 'Smishing', icon: '📱', level: 88, category: 'AAA', url: 'paginas/smishing.html' },
+        { name: 'Ransomware de Doble Extorsión', icon: '🔒', level: 92, category: 'BBB', url: 'paginas/ransomware.html' },
+        { name: 'Fileless Malware', icon: '👻', level: 85, category: 'BBB', url: 'paginas/fileless-malware.html' },
+        { name: 'Man-in-the-Middle', icon: '🕵️', level: 93, category: 'CCC', url: 'paginas/mitm.html' },
+        { name: 'Credential Stuffing', icon: '🔑', level: 82, category: 'CCC', url: 'paginas/credential-stuffing.html' },
+        { name: 'Password Spraying', icon: '🔓', level: 87, category: 'CCC', url: 'paginas/password-spraying.html' },
+        { name: 'DDoS', icon: '🌐', level: 78, category: 'DDD', url: 'paginas/ddos.html' },
+        { name: 'Inyección SQL', icon: '🗄️', level: 75, category: 'GGG', url: 'paginas/sql-injection.html' },
+        { name: 'Compromiso de Proveedores', icon: '🔓', level: 85, category: 'EEE', url: 'paginas/supply-chain.html' },
+        { name: 'Ataques a IoT', icon: '📡', level: 90, category: 'FFF', url: 'paginas/iot.html' }
     ];
 
     // ==========================================
@@ -300,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // 5. CUADRÍCULA DE HEXÁGONOS (SANDBOX)
+    // 5. CUADRÍCULA DE HEXÁGONOS (SANDBOX EDITADO)
     // ==========================================
     function initSkillsGrid() {
         const skillsGrid = document.getElementById('skillsGrid');
@@ -315,8 +316,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 : skillsData.filter(skill => skill.category === category);
             
             filteredSkills.forEach((skill, index) => {
-                const hexagon = document.createElement('div');
+                // Modificado de 'div' a 'a' para actuar como enlace nativo a su respectiva página
+                const hexagon = document.createElement('a');
                 hexagon.className = 'skill-hexagon';
+                hexagon.href = skill.url; 
                 hexagon.style.animationDelay = `${index * 0.1}s`;
                 
                 hexagon.innerHTML = `
